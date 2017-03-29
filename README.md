@@ -17,10 +17,6 @@ To use Presence with your projects, edit your `mix.exs` file and add it as a dep
 defp deps do
   [{:presence, "~> 7.0"}]
 end
-
-defp application do
-  [applications: [:presence]]
-end
 ```
 
 ### Examples
