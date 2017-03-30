@@ -1,6 +1,6 @@
 ## Presence [![Build Status](https://circleci.com/gh/wnuqui/presence.svg?style=shield&circle-token=:circle-token "Build Status")](https://circleci.com/gh/wnuqui/presence)
 
-Presence is very small library for Elixir projects that checks if a value is blank. A value is blank if it's nil, false, empty, or a whitespace string.
+Presence is very small library for Elixir projects that needs to check if a value is blank. A value is blank if it's nil, false, empty, or a whitespace string.
 
 The complete documentation for Presence is located [here](https://hexdocs.pm/presence).
 
@@ -74,6 +74,10 @@ Other modules can implement the Protocol by defining these functions:
 - `is_blank/1`
 - `is_preent/1`
 - `presence/1`
+
+## Inspiration
+
+Many thanks to [Rails](http://rubyonrails.org/) for the inspiration.
 
 ## License
 

@@ -5,7 +5,7 @@ defprotocol Presence do
 
   The functions required to be implemented are
   `is_blank/1`, `is_present/1` and `presence/1`.
-  The functions are not automatically imported
+  These functions are not automatically imported
   by `Kernel`.
 
   Currently, these modules implements `Presence` protocol.
@@ -19,7 +19,7 @@ defprotocol Presence do
   """
 
   @doc ~S"""
-  A value is blank if it's false, empty, or a whitespace string.
+  A value is blank if it's nil, false, empty, or a whitespace string.
 
   For example
     - `false`
