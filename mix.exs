@@ -38,7 +38,9 @@ defmodule Presence.Mixfile do
     [
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
       {:credo, "~> 0.7", only: [:dev, :test]},
+      {:junit_formatter, ">= 0.0.0"},
       {:excoveralls, "~> 0.6.3", only: :test},
+      {:inch_ex, only: :docs},
       {:ex_unit_notifier, "~> 0.1", only: :test},
       {:earmark, ">= 1.2.0", only: :dev},
       {:ex_doc, "~> 0.15", only: :dev, runtime: false}

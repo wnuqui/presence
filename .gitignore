@@ -18,3 +18,14 @@ erl_crash.dump
 
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
+
+# Rubymine related
+/.idea
+
+# App artifacts
+/_build/dev
+/_build/test/consolidated/*
+/_build/test/lib/*
+/db
+/deps
+/*.ez
