@@ -15,7 +15,7 @@ To use Presence with your projects, edit your `mix.exs` file and add it as a dep
 
 ```elixir
 defp deps do
-  [{:presence, "~> 7.0"}]
+  [{:presence, "~> 0.8.1"}]
 end
 ```
 
