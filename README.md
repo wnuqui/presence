@@ -1,4 +1,4 @@
-## Presence
+## Presence [![Build Status](https://circleci.com/gh/wnuqui/presence.svg?style=shield&circle-token=:circle-token "Build Status")](https://circleci.com/gh/wnuqui/presence.svg)
 
 Presence is very small library for Elixir projects that checks if a value is blank. A value is blank if it's nil, false, empty, or a whitespace string.
 
