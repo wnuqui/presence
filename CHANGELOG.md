@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.1
+
+Update documentation
+We do not need OTP application configuration
+
 ## 0.8.0
 
 Update README to only add as a module dependency.
