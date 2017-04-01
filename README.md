@@ -1,4 +1,4 @@
-## Presence [![Build Status](https://circleci.com/gh/wnuqui/presence.svg?style=shield&circle-token=:circle-token "Build Status")](https://circleci.com/gh/wnuqui/presence)
+## Presence [![Build Status](https://circleci.com/gh/wnuqui/presence.svg?style=shield&circle-token=:circle-token "Build Status")](https://circleci.com/gh/wnuqui/presence) [![Coverage Status](https://coveralls.io/repos/github/wnuqui/presence/badge.svg?branch=master)](https://coveralls.io/github/wnuqui/presence?branch=master)
 
 Presence is very small library for Elixir projects that needs to check if a value is blank. A value is blank if it's nil, false, empty, or a whitespace string.
 

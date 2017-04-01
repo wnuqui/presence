@@ -4,6 +4,8 @@ machine:
   environment:
     PATH: "$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
     MIX_ENV: "test"
+    COVERALLS_REPO_TOKEN: WwnOh9czm452NRooiGZwCqUMiujEmPtfI
+    COVERALLS_PARALLEL: true
 
 dependencies:
   cache_directories:
