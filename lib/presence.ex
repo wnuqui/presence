@@ -11,8 +11,8 @@ defprotocol Presence do
   Currently, these modules implements `Presence` protocol.
 
     - `Atom`
-    - `List`
     - `BitString`
+    - `List`
     - `Map`
     - `Tuple`
 
@@ -22,13 +22,13 @@ defprotocol Presence do
   A value is blank if it's nil, false, empty, or a whitespace string.
 
   For example
-    - `false`
-    - `''`
-    - `'   '`
     - `nil`
+    - `false`
     - `[]`
     - `%{}`
     - `{}`
+    - `''`
+    - `'   '`
 
   are all blank.
 
@@ -122,7 +122,7 @@ defprotocol Presence do
 
   becomes
 
-      region = state.presence || country.presence || 'US'
+      region = presence(state) || presence(country) || 'US'
 
   """
   def presence(value)
