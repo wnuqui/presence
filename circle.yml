@@ -26,5 +26,10 @@ dependencies:
 test:
   override:
     - mix test
+    - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN mix coveralls.circle
     - mkdir -p $CIRCLE_TEST_REPORTS/exunit
     - cp _build/test/lib/presence/test-junit-report.xml $CIRCLE_TEST_REPORTS/exunit
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN
