@@ -27,7 +27,7 @@ import Presence
 ```
 to the top of the module where you will be working with Presence module. We `import` to easily access functions from modules implementing `Presence` protocol without using the fully-qualified name.
 
-These functions are `is_blank/1`, `is_present`, `presence`
+These functions are `is_blank/1`, `is_present/1`, `presence/1`
 
 Few examples below:
 
@@ -64,15 +64,15 @@ nil
 ## Current Implementation
 
 Presence is a Protocol that is currently implemented by the following:
-* Atom
-* List
-* BitString
-* Map
-* Tuple
+- `Atom`
+- `BitString`
+- `List`
+- `Map`
+- `Tuple`
 
 Other modules can implement the Protocol by defining these functions:
 - `is_blank/1`
-- `is_preent/1`
+- `is_present/1`
 - `presence/1`
 
 ## Inspiration
