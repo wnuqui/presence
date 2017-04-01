@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.2
+
+Update documentation
+
 ## 0.8.1
 
 Update documentation
