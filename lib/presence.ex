@@ -12,6 +12,7 @@ defprotocol Presence do
 
     - `Atom`
     - `BitString`
+    - `Float`
     - `Integer`
     - `List`
     - `Map`
@@ -76,6 +77,12 @@ defprotocol Presence do
 
       iex> is_blank("\u00a0")
       true
+
+  ### Float
+  `1.1` is not blank:
+
+      iex> is_blank(1.1)
+      false
 
   ### Integer
   `1` is not blank:
@@ -163,6 +170,14 @@ defimpl Presence, for: BitString do
   def presence(string) do
     if is_present(string), do: string, else: nil
   end
+end
+
+defimpl Presence, for: Float do
+  def is_blank(_), do: false
+
+  def is_present(_), do: true
+
+  def presence(float), do: float
 end
 
 defimpl Presence, for: Integer do
