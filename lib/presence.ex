@@ -25,10 +25,12 @@ defprotocol Presence do
     - `nil`
     - `false`
     - `[]`
-    - `%{}`
-    - `{}`
     - `''`
     - `'   '`
+    - `%{}`
+    - `{}`
+    - `""`
+    - `"   "`
 
   are all blank.
 
@@ -118,11 +120,11 @@ defprotocol Presence do
       if is_present(state), do: state = state
       if is_present(country), do: country = country
 
-      region  = state || country || 'US'
+      region  = state || country || "US"
 
   becomes
 
-      region = presence(state) || presence(country) || 'US'
+      region = presence(state) || presence(country) || "US"
 
   """
   def presence(value)
