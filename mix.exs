@@ -5,7 +5,7 @@ defmodule Presence.Mixfile do
     [
       app: :presence,
       app: :excoveralls,
-      version: "0.8.2",
+      version: "0.8.5",
       elixir: "~> 1.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
