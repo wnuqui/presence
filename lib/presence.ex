@@ -12,6 +12,7 @@ defprotocol Presence do
 
     - `Atom`
     - `BitString`
+    - `Integer`
     - `List`
     - `Map`
     - `Tuple`
@@ -56,25 +57,8 @@ defprotocol Presence do
       iex> is_blank(:false)
       true
 
-  ### List
-  `[]` is blank:
-
-      iex> is_blank([])
-      true
-
-  `' '` is blank:
-
-      iex> is_blank(' ')
-      true
-
-  ### Map
-  `%{}` is blank:
-
-      iex> is_blank(%{})
-      true
-
-  ### String
-  A string is blank if it's empty or contains whitespaces only:
+  ### BitString
+  A bit string (or simply string) is blank if it's empty or contains whitespaces only:
 
       iex> is_blank("")
       true
@@ -91,6 +75,29 @@ defprotocol Presence do
   Unicode whitespace is supported:
 
       iex> is_blank("\u00a0")
+      true
+
+  ### Integer
+  `1` is not blank:
+
+      iex> is_blank(1)
+      false
+
+  ### List
+  `[]` is blank:
+
+      iex> is_blank([])
+      true
+
+  `' '` is blank:
+
+      iex> is_blank(' ')
+      true
+
+  ### Map
+  `%{}` is blank:
+
+      iex> is_blank(%{})
       true
 
   ### Tuple
@@ -156,6 +163,14 @@ defimpl Presence, for: BitString do
   def presence(string) do
     if is_present(string), do: string, else: nil
   end
+end
+
+defimpl Presence, for: Integer do
+  def is_blank(_), do: false
+
+  def is_present(_), do: true
+
+  def presence(integer), do: integer
 end
 
 defimpl Presence, for: List do
