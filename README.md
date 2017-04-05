@@ -7,7 +7,7 @@ The complete documentation for Presence is located [here](https://hexdocs.pm/pre
 ## Getting Started
 
 Some examples can be found below, but I highly recommend you review the
-API docs [here](https://hexdocs.pm/presence). There are examples for `Atom`, `BitString`, `List`, `Map` and `Tuple`.
+API docs [here](https://hexdocs.pm/presence). There are examples for `Atom`, `BitString`, `Integer`, `List`, `Map` and `Tuple`.
 
 ### Adding Presence To Your Project
 
@@ -66,6 +66,7 @@ nil
 Presence is a Protocol that is currently implemented by the following:
 - `Atom`
 - `BitString`
+- `Integer`
 - `List`
 - `Map`
 - `Tuple`
