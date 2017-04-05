@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.5
+
+Implement Presence protocol for Float
+Implement Presence protocol for Integer
+More doc changes
+More badges
+
 ## 0.8.2
 
 Update documentation
