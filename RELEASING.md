@@ -9,7 +9,7 @@
 
         git commit -a -m "Bump version to 0.X.Y"
         git tag v0.X.Y
-        mix test && mix hex.publish
+        mix test && mix dialyzer --plt && mix dialyzer && mix hex.publish
         git push origin master --tags
 
 * Enjoy!
