@@ -20,6 +20,18 @@ defprotocol Presence do
 
   """
 
+  @typedoc """
+  The return value of `presence` function.
+  """
+  @type t :: \
+      atom
+    | bitstring
+    | float
+    | integer
+    | list
+    | map
+    | tuple
+
   @doc ~S"""
   A value is blank if it's nil, false, empty, or a whitespace string.
 
@@ -113,11 +125,13 @@ defprotocol Presence do
       iex> is_blank({})
       true
   """
+  @spec is_blank(t) :: boolean
   def is_blank(value)
 
   @doc ~S"""
   A value is present if it's not blank.
   """
+  @spec is_present(t) :: boolean
   def is_present(value)
 
   @doc ~S"""
@@ -141,6 +155,7 @@ defprotocol Presence do
       region = presence(state) || presence(country) || "US"
 
   """
+  @spec presence(t) :: t | nil
   def presence(value)
 end
 
