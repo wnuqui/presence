@@ -20,7 +20,9 @@ defmodule Presence.Mixfile do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
-      ]
+      ],
+
+      dialyzer: [remove_defaults: [:unknown]]
     ]
   end
 
@@ -35,7 +37,8 @@ defmodule Presence.Mixfile do
       {:earmark, ">= 1.2.0", only: :dev},
       {:ex_doc, "~> 0.15", only: :dev, runtime: false},
       {:junit_formatter, ">= 0.0.0"},
-      {:inch_ex, "~> 0.5", only: [:dev, :test]}
+      {:inch_ex, "~> 0.5", only: [:dev, :test]},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
   end
 
