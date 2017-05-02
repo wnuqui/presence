@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0
+
+- Add typespecs for docs and code analysis
+  - Code analysis prevents type inconsistencies
+- Use Travis as new CI
+- New changelog format
+
 ## 0.8.5
 
 - Implement Presence protocol for Float
