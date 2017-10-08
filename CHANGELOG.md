@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.1
+
+- Misc changes
+  - Credo fix
+  - junit_formatter only a test dependency
+
 ## 0.9.0
 
 - Add typespecs for docs and code analysis
