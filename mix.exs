@@ -36,7 +36,7 @@ defmodule Presence.Mixfile do
       {:ex_unit_notifier, "~> 0.1", only: :test},
       {:earmark, ">= 1.2.0", only: :dev},
       {:ex_doc, "~> 0.15", only: :dev, runtime: false},
-      {:junit_formatter, ">= 0.0.0"},
+      {:junit_formatter, ">= 0.0.0", only: :test},
       {:inch_ex, "~> 0.5", only: [:dev, :test]},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
     ]
