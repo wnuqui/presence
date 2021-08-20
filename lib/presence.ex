@@ -177,7 +177,7 @@ end
 
 defimpl Presence, for: BitString do
   def is_blank(string) do
-    String.strip(string) == ""
+    String.trim(string) == ""
   end
 
   def is_present(string), do: !is_blank(string)
