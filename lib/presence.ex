@@ -32,6 +32,8 @@ defprotocol Presence do
     | map
     | tuple
 
+  @type default :: any
+
   @doc ~S"""
   A value is blank if it's nil, false, empty, or a whitespace string.
 
@@ -157,6 +159,27 @@ defprotocol Presence do
   """
   @spec presence(t) :: t | nil
   def presence(value)
+
+  @doc ~S"""
+  Returns the `value` if it's present otherwise returns the `default`.
+
+      presence(value, default)
+
+  is equivalent to
+
+      is_present(value) ? value : default
+
+  For example, something like
+
+      format = (maybe_format |> presence()) || "csv"
+
+  becomes
+
+      format = maybe_format |> presence("csv")
+
+  """
+  @spec presence(t, default) :: t | default | nil
+  def presence(value, default)
 end
 
 defimpl Presence, for: Atom do
@@ -170,8 +193,8 @@ defimpl Presence, for: Atom do
 
   def is_present(atom), do: !is_blank(atom)
 
-  def presence(atom) do
-    if is_present(atom), do: atom, else: nil
+  def presence(atom, default \\ nil) do
+    if is_present(atom), do: atom, else: default
   end
 end
 
@@ -182,8 +205,8 @@ defimpl Presence, for: BitString do
 
   def is_present(string), do: !is_blank(string)
 
-  def presence(string) do
-    if is_present(string), do: string, else: nil
+  def presence(string, default \\ nil) do
+    if is_present(string), do: string, else: default
   end
 end
 
@@ -192,7 +215,7 @@ defimpl Presence, for: Float do
 
   def is_present(_), do: true
 
-  def presence(float), do: float
+  def presence(float, _default \\ nil), do: float
 end
 
 defimpl Presence, for: Integer do
@@ -200,7 +223,7 @@ defimpl Presence, for: Integer do
 
   def is_present(_), do: true
 
-  def presence(integer), do: integer
+  def presence(integer, _default \\ nil), do: integer
 end
 
 defimpl Presence, for: List do
@@ -214,8 +237,8 @@ defimpl Presence, for: List do
 
   def is_present(charlist), do: !is_blank(charlist)
 
-  def presence(charlist) do
-    if is_present(charlist), do: charlist, else: nil
+  def presence(charlist, default \\ nil) do
+    if is_present(charlist), do: charlist, else: default
   end
 end
 
@@ -227,8 +250,8 @@ defimpl Presence, for: Map do
 
   def is_present(map), do: !is_blank(map)
 
-  def presence(map) do
-    if is_present(map), do: map, else: nil
+  def presence(map, default \\ nil) do
+    if is_present(map), do: map, else: default
   end
 end
 
@@ -240,7 +263,7 @@ defimpl Presence, for: Tuple do
 
   def is_present(tuple), do: !is_blank(tuple)
 
-  def presence(tuple) do
-    if is_present(tuple), do: tuple, else: nil
+  def presence(tuple, default \\ nil) do
+    if is_present(tuple), do: tuple, else: default
   end
 end
